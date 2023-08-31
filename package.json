@@ -8,5 +8,8 @@
     "compile:watch": "sass --watch src/styles/style.scss:src/style.css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.66.1"
+  }
 }
