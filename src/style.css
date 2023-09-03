@@ -166,22 +166,39 @@ header nav a:active::after {
 @media only screen and (max-width: 768px) {
   .pinned-section {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5em;
     grid-template-areas: "card1  card2" "card1  card3" "card1  card4" "card1  card5";
   }
 }
 footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6em 6em;
+  color: #ebebeb;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6em 6em;
-  color: #ebebeb;
+  flex-direction: column;
 }
 footer form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
   padding: 0 10em;
 }
 footer form h3 {
   font-size: 32px;
   margin: 0;
+}
+footer form input {
+  width: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  padding: 1em;
 }
 footer form p {
   display: inline-flex;
@@ -190,6 +207,14 @@ footer form p span {
   overflow: hidden;
   white-space: nowrap;
   animation: typing steps(21) 5s infinite;
+}
+
+.styled-input {
+  border-bottom: 2px solid #ebebeb;
+  transition: border-bottom 0.3s;
+}
+.styled-input:focus {
+  transform: scale(1.05);
 }
 
 @keyframes typing {
@@ -326,7 +351,7 @@ footer form p span {
 
 @media only screen and (max-width: 768px) {
   .single-card-section {
-    padding: 1.5em 0;
+    padding: 1em;
   }
   .single-card-section > div {
     padding: 6em 3em;
@@ -466,10 +491,11 @@ footer form p span {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1em;
 }
 
 .btn {
-  z-index: 3;
+  z-index: 999;
   background-color: none;
   border-radius: 10px;
   border: none;

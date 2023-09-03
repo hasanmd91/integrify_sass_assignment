@@ -70,6 +70,7 @@
 @media only screen and (max-width: 768px) {
   .pinned-section {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5em;
     grid-template-areas:
       'card1  card2'
       'card1  card3'

@@ -1,0 +1,64 @@
+@use '../variables/fonts';
+@use '../variables/colors';
+
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6em 6em;
+  color: colors.$text-light-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0 10em;
+    h3 {
+      font-size: fonts.$font-m;
+      margin: 0;
+    }
+
+    input {
+      width: 50%;
+      background: transparent;
+      border: none;
+      outline: none;
+      text-align: center;
+      padding: 1em;
+    }
+
+    p {
+      display: inline-flex;
+      span {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing steps(21) 5s infinite;
+      }
+    }
+  }
+}
+
+.styled-input {
+  border-bottom: 2px solid colors.$text-light-color;
+  transition: border-bottom 0.3s;
+
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
