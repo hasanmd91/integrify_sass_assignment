@@ -1,0 +1,65 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    color: colors.$text-light-color;
+    img {
+      width: 135px;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      list-style-type: none;
+      position: relative;
+      padding: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: colors.$text-light-color;
+      font-size: fonts.$font-s;
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: colors.$text-light-color;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 1;
+      }
+      &:active::after {
+        opacity: 1;
+        background-color: colors.$orange-color;
+      }
+    }
+  }
+}
+
+.ham__menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .ham__menu {
+    display: block;
+  }
+
+  .nav__list {
+    display: none;
+  }
+}
