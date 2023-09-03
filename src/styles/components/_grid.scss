@@ -1,0 +1,85 @@
+@use '../variables/fonts';
+@use '../variables/colors';
+@import '../utils/utils';
+
+.grid-card-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1em;
+  grid-template-areas:
+    'card1 card1 card1 card2 card2 card2'
+    'card3 card3 card4 card4 card5 card5';
+
+  & > div {
+    padding: 6em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 16px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 1s ease;
+
+    &:first-child {
+      grid-area: card1;
+      background-image: url('https://images.unsplash.com/photo-1562664377-709f2c337eb2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ');
+      @include overlay(
+        $color: colors.$color-bg-three,
+        $opacity: colors.$overlay-pinned-image
+      );
+    }
+    &:nth-child(2) {
+      grid-area: card2;
+      background-image: url('https://images.unsplash.com/photo-1566764581662-6cd06d381aef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ');
+      @include overlay(
+        $color: colors.$color-ultramarine,
+        $opacity: colors.$overlay-color-dark-image
+      );
+    }
+    &:nth-child(3) {
+      grid-area: card3;
+      background-color: colors.$ghost-accent-color;
+    }
+    &:nth-child(4) {
+      grid-area: card4;
+      background-image: url('https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ');
+
+      @include overlay(
+        $color: colors.$color-eggplant,
+        $opacity: colors.$overlay-color-dark-image
+      );
+    }
+    &:nth-child(5) {
+      grid-area: card5;
+      background-image: url('https://images.unsplash.com/photo-1562185022-c0a7889d7fbb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=850&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ');
+
+      @include overlay(
+        $color: colors.$color-cerise,
+        $opacity: colors.$overlay-color-dark-image
+      );
+    }
+
+    &:hover {
+      transform: translateY(5px);
+    }
+
+    @include fonts;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-card-section {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      'card1'
+      'card2'
+      'card3'
+      'card4'
+      'card5';
+
+    padding: 1em;
+  }
+}

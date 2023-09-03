@@ -1,0 +1,15 @@
+@use './variables/colors';
+
+@use './components/header';
+@use './components/pinned';
+@use './components/footer';
+@use './components/singlecard';
+@use './components/grid';
+@use './components/load';
+@use './components/info';
+
+@use './shared/buttons';
+
+body {
+  background-color: colors.$bg-body-color;
+}

@@ -1,0 +1,12 @@
+@use '../variables/colors';
+
+.info-section {
+  max-width: 1000px;
+  margin: 1em auto;
+  color: colors.$text-light-color;
+  font-weight: 800;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
